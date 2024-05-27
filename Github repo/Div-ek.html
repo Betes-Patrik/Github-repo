@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div-ek</title>
+</head>
+<body>
+    
+<div>   </div>
+<div>   </div>
+<div>   </div>
+<div>   </div>
+<div>   </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const divs = document.querySelectorAll('body > div');
+        if (divs.length !== 5) {
+            console.error(' A body nem tartalmaz 5 dive elemet.');
+            return;
+        }
+
+        divs[0].textContent = 'első';
+        divs[2].textContent = 'harmadik';
+        divs[4].textContent = 'utolsó';
+        
+        divs.forEach((div, index) => {
+            if (!div.textContent) {
+                div.textContent = `${index + 1}. elem a bodyban `;
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>
